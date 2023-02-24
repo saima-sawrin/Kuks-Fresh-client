@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaDollarSign, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const AllServices = ({service}) => {
     const {id,title,img , price , rating , description} = service;
@@ -8,7 +10,12 @@ const AllServices = ({service}) => {
         <div className="flex flex-col max-w-md p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
   
         <div>
-            <img src={img} alt="" className="object-cover w-full mb-4  sm:h-96 dark:bg-gray-500 rounded-md " />
+            {/* <img src={img} alt="" className="object-cover w-full mb-4   sm:h-56 dark:bg-gray-500 rounded-md " /> */}
+            <PhotoProvider>
+      <PhotoView src={img}>
+      <figure><img src={img} alt="Shoes" className="object-cover w-full mb-4   sm:h-56 dark:bg-gray-500 rounded-md " /></figure>
+      </PhotoView>
+    </PhotoProvider>
             <h2 className="mb-1 text-xl font-semibold">{title}</h2>
          
             <p>{

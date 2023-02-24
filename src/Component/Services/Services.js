@@ -14,7 +14,7 @@ const Services = () => {
 	
   
     return (
-        <div className="container flex flex-col justify-center p-4 mx-auto">
+        <div className="container flex flex-col justify-center p-4 mx-auto ">
   
 {/* <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
 
@@ -57,8 +57,8 @@ const Services = () => {
    services.map(service => <Service key={service.id} service={service}></Service>)
  }
 </div>
-<div  className='bg-orange-500 flex justify-center mt-6 rounded-md mx-56 '>
-     <Link to='/services'><button className=" text-white  text-lg text-center border-0  my-5  bg-orange-500 ">View All</button></Link>
+<div  className='bg-orange-500 flex justify-center mt-6 rounded-md lg:mx-48 '>
+     <Link to='/services'><button className=" text-white  text-lg text-center border-0  my-3  bg-orange-500 ">View All</button></Link>
      </div>
 
  </div>
