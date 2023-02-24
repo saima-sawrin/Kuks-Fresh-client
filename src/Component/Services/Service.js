@@ -5,7 +5,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 const Service = ({service}) => {
-    const {id,title,img , price , rating , description} = service;
+    const {service_id,title,img , price , rating , description} = service;
     return (
         <div className="flex flex-col max-w-md p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 ">
   
@@ -19,7 +19,7 @@ const Service = ({service}) => {
             <h2 className="mb-1 text-xl font-semibold">{title}</h2>
          
             <p>{
-                  description.length > 100? <>{description.slice(0,100)+ '.......'}<Link to={`/service/${id}`}><b className='text-sm dark:text-gray-400'>Read more</b></Link></> :
+                  description.length > 100? <>{description.slice(0,100)+ '.......'}<Link to={`/service/${service_id}`}><b className='text-sm dark:text-gray-400'>Read more</b></Link></> :
                    description}</p>
         </div>
         <div className="flex flex-wrap justify-between">
@@ -47,7 +47,8 @@ const Service = ({service}) => {
    
         </div>
         <div className='bg-orange-500 text-white text-center py-3 rounded-md '>
-        <button className='bg-orange-500'>See Details</button>
+      
+       <Link to={`/services/${service_id}`}><button className="bg-orange-500 ">See Details</button></Link>
         </div>
     </div>
     );

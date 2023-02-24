@@ -7,7 +7,7 @@ const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
        
-                    <div className='text-orange-500'>
+                    <div className='text-orange-500 py-6'>
                         {/* Navbar Started */}
                           <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 text-orange-500 ">
                         <div className="relative flex items-center justify-between nav text-orange-500">
@@ -25,7 +25,7 @@ const Nav = () => {
                           <ul className="flex items-center hidden space-x-8 lg:flex">
                             <li>
                               <Link
-                                to="/Destination"
+                                to="/"
                                 aria-label="Our product"
                                 title="Our product"
                                 className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -67,7 +67,7 @@ const Nav = () => {
                             <li>
                               <a
                                 href="/"
-                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none "
+                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-orange-500 text-white bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none "
                                 aria-label="Sign up"
                                 title="Sign up"
                               >
@@ -79,7 +79,7 @@ const Nav = () => {
                             <button
                               aria-label="Open Menu"
                               title="Open Menu"
-                              className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline bg-deep-purple-50 focus:bg-deep-purple-50"
+                              className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline focus:bg-deep-purple-50"
                               onClick={() => setIsMenuOpen(true)}
                             >
                               <svg className="w-5 " viewBox="0 0 24 24">
@@ -175,7 +175,7 @@ const Nav = () => {
                                       <li>
                                         <a
                                           href="/"
-                                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-gray-700  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide   transition duration-200 rounded shadow-md bg-deep-purple-accent-400 bg-orange-500 text-white hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                           aria-label="Sign up"
                                           title="Sign up"
                                         >

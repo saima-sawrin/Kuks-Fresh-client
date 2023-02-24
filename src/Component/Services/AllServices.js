@@ -3,9 +3,11 @@ import { FaDollarSign, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../Hooks/useTitle';
 
 const AllServices = ({service}) => {
     const {id,title,img , price , rating , description} = service;
+    useTitle('services')
     return (
         <div className="flex flex-col max-w-md p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
   

@@ -1,4 +1,23 @@
 .banner{
-    background-image: url('../../Asset//banner.png');
+    background-image: url('../../Asset/Hero.png');
     background-repeat: no-repeat;
+
+    height: 50%;
+  
+    background-attachment: relative;
+  
 }
+
+/* .header{
+   
+    background-repeat: no-repeat;
+    background-attachment: relative;
+    background-position: right; */
+
+    /* padding-bottom: 3%;
+    padding-left: 5%; */
+/* margin-left: 40px; */
+    /* padding-right: 10%; */
+    /* padding-top: 0%;
+
+} */

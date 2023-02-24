@@ -4,7 +4,7 @@ import hero from '../../Asset/Hero.png';
 const Hero = () => {
 
         return (
-            <div className="relative mx-5">
+            <div className=" relative mx-10">
             <img
               src={hero}
               className=" absolute inset-0 object-cover w-full h-full rounded-md "
