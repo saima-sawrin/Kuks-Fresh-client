@@ -1,10 +1,14 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Blog from '../Component/Blog/Blog';
+import AddServices from '../Component/Services/AddServices/AddServices';
 import AllCard from '../Component/Services/AllCard';
-import Services from '../Component/Services/Services';
+import Details from '../Component/Services/Details';
 import Main from '../Layout/Main';
 import Home from '../Page/Home/Home';
+import Login from '../Page/Login/Login';
+import SignUp from '../Page/SignUp/SignUp';
+
 
 const router = createBrowserRouter ([
     {
@@ -22,16 +26,29 @@ const router = createBrowserRouter ([
         {
             path: '/blog',
             element: <Blog></Blog>
-        }
-    ]
-    },
-   
+        },
+        {
+            path: '/login',
+            element: <Login></Login>
+        },
+        {
+            path: 'signup',
+            element: <SignUp></SignUp>
+        },
+        {
+            path:'/addServices',
+            element: <AddServices></AddServices>
+        },
+          
     {
-            path:'/services/:id',
-            loader:({params})=>fetch(`services.json${params.id}`),
-            element: <Services></Services>
-        
+        path:'/services/:id',
+        loader:({params})=>fetch(`http://localhost:5000/allServices/${params.id}`),
+        element: <Details></Details>
+    
+   }
+    ]
     }
+ 
 ])
 
 

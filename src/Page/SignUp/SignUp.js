@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
-import img from '../../../assets/img/login.png';
+import img from '../../Asset/3.png';
 import { Link } from 'react-router-dom';
 
 
-import { AuthContext } from '../../../context/AuthProvider';
+import { AuthContext } from '../../context/AuthProvider';
 
 
 const SignUp = () => {

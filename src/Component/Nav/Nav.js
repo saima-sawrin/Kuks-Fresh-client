@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../Asset/Kuks FresH.png';
 import hero from '../../Asset/Hero.png';
+import { AuthContext } from '../../context/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 
 const Nav = () => {
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const {user , LogOut} = useContext(AuthContext);
+	// console.log(user)
+
+	const handleLogOut =()=>{
+		LogOut()
+		.then(()=>{})
+		.catch(error => console.error(error))
+	  }
     return (
        
                     <div className='text-orange-500 py-6'>
@@ -53,8 +64,31 @@ const Nav = () => {
                              Blog
                               </a>
                             </li>
-                            
-                            <li>
+                            <>
+            {
+              user?.uid ?
+              <div className="items-center flex-shrink-0 hidden lg:flex "> 
+                  <button><Link className='mr-3 font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400' to='/addServices'>Add Services</Link></button>
+                  <button><Link className='mr-3 font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400' to='/myReview'>My Review</Link></button>
+				  <button className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400" onClick={handleLogOut}>Log out</button>
+				  
+              </div>
+              :
+              <div  className="items-center flex-shrink-0 hidden lg:flex text-white">
+                 <Link to='/login'><button className="self-center font-medium px-8 py-3 rounded bg-orange-500 ">Sign in</button></Link>
+                  <Link className='text-decoration-none font-medium mx-3' to='/signup'><button className="self-center px-8 py-3 font-semibold rounded bg-orange-500 dark:text-gray-900">Sign up</button></Link>
+              </div>
+          }
+		  <div div className="items-center flex-shrink-0 hidden lg:flex">
+		  {user?.photoURL?
+		                
+						<img src={user.photoURL} alt="" title= {user.displayName} className="w-10 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+
+				   
+						  : <FaUser></FaUser>
+					  }</div>
+          </>
+                            {/* <li>
                               <a
                                 href="/login"
                                 aria-label="Login"
@@ -73,7 +107,7 @@ const Nav = () => {
                               >
                                 Sign up
                               </a>
-                            </li>
+                            </li> */}
                           </ul>
                           <div className="lg:hidden ">
                             <button
@@ -98,7 +132,7 @@ const Nav = () => {
                               </svg>
                             </button>
                             {isMenuOpen && (
-                              <div className="absolute pl-5 top-0 right-0 w-4/7">
+                              <div className=" absolute pl-5 top-0 right-0 w-4/7">
                                 <div className="p-5 bg-white border rounded shadow-sm">
                                   <div className="flex items-center justify-between mb-4">
                                     <div>
