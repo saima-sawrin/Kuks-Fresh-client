@@ -58,7 +58,7 @@ const Nav = () => {
                               <a
                                 href="/blog"
                                 aria-label="Product pricing"
-                                title="Product pricing"
+                                title="blog"
                                 className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"
                               >
                              Blog
@@ -76,7 +76,7 @@ const Nav = () => {
               :
               <div  className="items-center flex-shrink-0 hidden lg:flex text-white">
                  <Link to='/login'><button className="self-center font-medium px-8 py-3 rounded bg-orange-500 ">Sign in</button></Link>
-                  <Link className='text-decoration-none font-medium mx-3' to='/signup'><button className="self-center px-8 py-3 font-semibold rounded bg-orange-500 dark:text-gray-900">Sign up</button></Link>
+                  <Link className='text-decoration-none font-medium mx-3' to='/signup'><button className="self-center px-8 py-3  rounded bg-orange-500 dark:text-gray-900">Sign up</button></Link>
               </div>
           }
 		  <div div className="items-center flex-shrink-0 hidden lg:flex">

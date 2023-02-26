@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { FaDollarSign, FaStar } from 'react-icons/fa';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
@@ -16,14 +17,34 @@ const Details = () => {
         const img = form.img.value;
         const email = user?.email || 'unregistered';
         const review = form.review.value;
+        const rate = form.rate.value;
 
         const reviews = {
-            name: name,
+            client: name,
             email,
             img ,
             review,
+			rate
 
         }
+		fetch(`https://service-review-server-saima-sawrin.vercel.app/reviews?email=${user?.email}`,{
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(review),
+        })
+        .then(res=> res.json())
+        .then(data=> {
+            if(data.acknowledged){
+                alert('successfully added')
+				toast.success('successfully added')
+                event.target.reset();
+            }
+        })
+            .catch(err => console.error(err));
+
+
 	}
     return (
      <div className='grid lg:grid-cols-2'>
@@ -102,7 +123,21 @@ const Details = () => {
 
                 </div>
                 <textarea name='feedback' className="textarea mt-2 textarea-bordered h-24 w-full" placeholder="your review"></textarea>
-                <input className='btn bg-orange-500 border-0' type="submit" value="Leave Feedback" />
+                <textarea name='rate' className="textarea mt-2 textarea-bordered h-10 w-full" placeholder="Rating"></textarea>
+                {/* <input className='btn bg-orange-500 border-0' type="submit" value="Leave Feedback" /> */}
+				<>
+		         {
+					user?.uid?
+					<div>
+                         <input className='btn bg-orange-500 border-0' type="submit" value="Leave Feedback" />
+					</div>
+					:
+					<div>
+                         <input className='btn bg-orange-500 border-0' type="submit" disabled value="Leave Feedback"  />
+						 <a href="/login" title='For Feedback You need to signUp first'></a>
+					</div>
+				 }
+				</>
             </form>
 	</div>
 </div>
