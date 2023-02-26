@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import img from '../../Asset/3.png';
+import img from '../../Asset/login.svg';
 import { Link } from 'react-router-dom';
 
 
@@ -69,9 +69,9 @@ const SignUp = () => {
                         
                     </div>
                     <div className="form-control mt-6">
-                        <input className="btn btn-primary" type="submit" value="Sign Up" />
+                        <input className="btn bg-orange-500 border-0" type="submit" value="Sign Up" />
                     </div>
-                    <p className='text-center'>Already have an account? <Link className='text-primary font-bold' to="/login">Login</Link> </p>
+                    <p className='text-center'>Already have an account? <Link className='text-orange-500 font-bold' to="/login">Login</Link> </p>
                      <p className='text-red-500'>{error}</p>
                 </form>
                

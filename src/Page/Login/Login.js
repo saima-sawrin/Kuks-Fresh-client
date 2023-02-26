@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import img from '../../Asset/3.png';
+import img from '../../Asset/login.svg';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import {  Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';

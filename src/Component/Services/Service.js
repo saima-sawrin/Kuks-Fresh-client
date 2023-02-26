@@ -28,7 +28,7 @@ const Service = ({service}) => {
                 <button type="button" className="flex items-center p-1 space-x-1.5">
              
                     <FaDollarSign className='w-4 h-4'></FaDollarSign>
-                    <span>Price:{price}</span>
+                    <span>{price}</span>
                 </button>
             </div>
             <div className="flex space-x-2 text-sm dark:text-gray-400">
