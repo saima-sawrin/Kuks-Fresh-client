@@ -4,6 +4,7 @@ import Blog from '../Component/Blog/Blog';
 import AddServices from '../Component/Services/AddServices/AddServices';
 import AllCard from '../Component/Services/AllCard';
 import Details from '../Component/Services/Details';
+import Reviews from '../Component/Services/Reviews/Reviews';
 import Main from '../Layout/Main';
 import Home from '../Page/Home/Home';
 import Login from '../Page/Login/Login';
@@ -40,15 +41,20 @@ const router = createBrowserRouter ([
             loader:()=> fetch(`http://localhost:5000/allServices`),
             element: <AddServices></AddServices>
         },
+     
           
     {
         path:'/services/:id',
         loader:({params})=>fetch(`http://localhost:5000/allServices/${params.id}`),
         element: <Details></Details>
     
+   },
+   
+   {
+    path:'/myReview',
+    element: <Reviews></Reviews>
    }
-    ]
-    }
+ ]}
  
 ])
 

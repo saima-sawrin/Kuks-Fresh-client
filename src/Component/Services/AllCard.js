@@ -15,7 +15,7 @@ const AllCard = () => {
         <div  className='grid lg:grid-cols-3 md:grid-cols-2 lg:gap-5 mx-10'>
          
         {
-      services.map(allService => <AllServices key={allService.id} service={allService}></AllServices>)
+      services.map(allService => <AllServices key={allService._id} service={allService}></AllServices>)
     }
         </div>
     </div>
