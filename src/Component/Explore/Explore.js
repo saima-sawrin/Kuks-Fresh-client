@@ -4,7 +4,7 @@ const Explore = () => {
     return (
         <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="mx-auto mb-5 lg:max-w-xl sm:text-center">
-          <h2 className="inline-block px-3 py-px mb-4 text-4xl font-semibold tracking-wider text-orange-500 uppercase rounded-full bg-teal-accent-400">
+          <h2 className="inline-block px-3 py-px mb-4 text-4xl font-semibold tracking-wider text-rose-500 uppercase rounded-full bg-teal-accent-400">
            Explore More
           </h2>
        

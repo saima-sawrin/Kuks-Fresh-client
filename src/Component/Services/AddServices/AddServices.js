@@ -6,6 +6,12 @@ const AddServices = () => {
     const {user} = useContext(AuthContext);
     const {_id,img,title,description , rating,price , service_id}= useLoaderData();
 
+
+  
+
+
+
+
     const  handleAddService = (event)=>{
         event.preventDefault();
     const form = event.target;
@@ -27,7 +33,7 @@ const AddServices = () => {
    
     }
 
-    fetch('http://localhost:5000/allServices',{
+    fetch('https://kuks-fresh-server-side.vercel.app/allServices',{
         method:'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -75,7 +81,7 @@ const AddServices = () => {
   </div>
 
 
-  <input className="text-white  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center 0 bg-orange-500 dark:focus:ring-blue-800" type="submit" value="Add Service" />
+  <input className="text-white  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center 0 bg-rose-500 dark:focus:ring-blue-800" type="submit" value="Add Service" />
 </form>
 
         </div>

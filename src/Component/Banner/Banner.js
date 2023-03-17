@@ -5,9 +5,9 @@ import hero from '../../Asset/Hero.png';
 
 const Banner = () => {
     return (
-        <div className='bg-orange-500 mx-10 banner'>
+        <div className='bg-rose-500 mx-10 banner'>
          
-            <div className="p-6 py-12 bg-orange-500 text-gray-100">
+            <div className="p-6 py-12 bg-rose-500 text-gray-100">
 	<div className="container mx-auto">
 		<div className="flex flex-col lg:flex-row items-center justify-between">
 			<h2 className="text-center text-6xl tracking-tighter font-bold">Up to

@@ -1,15 +1,19 @@
 import React, { useContext, useState } from 'react';
 import img from '../../Asset/login.svg';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 import { AuthContext } from '../../context/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 
 const SignUp = () => {
 
     const {createUser } = useContext(AuthContext);
     const[error , setError] = useState('');
+    const navigate = useNavigate();
+ const location = useLocation();
+ const from = location.state?.from?.pathname || '/';
    
     
      const handleSubmit = event => {
@@ -23,9 +27,11 @@ const SignUp = () => {
          createUser(email, password)
          .then( result => {
              const user = result.user;
-             alert('Successfully Registered ');
-             console.log(user);
+             toast.success('Successfully Registered ');
+            //  console.log(user);
              form.reset();
+             setError('');
+             navigate(from, {replace: true});
             
              
          })
@@ -69,9 +75,9 @@ const SignUp = () => {
                         
                     </div>
                     <div className="form-control mt-6">
-                        <input className="btn bg-orange-500 border-0" type="submit" value="Sign Up" />
+                        <input className="btn bg-rose-500 border-0" type="submit" value="Sign Up" />
                     </div>
-                    <p className='text-center'>Already have an account? <Link className='text-orange-500 font-bold' to="/login">Login</Link> </p>
+                    <p className='text-center'>Already have an account? <Link className='text-rose-500 font-bold' to="/login">Login</Link> </p>
                      <p className='text-red-500'>{error}</p>
                 </form>
                

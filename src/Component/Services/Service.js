@@ -43,9 +43,9 @@ const Service = ({service}) => {
             </div>
    
         </div>
-        <div className='bg-orange-500 text-white text-center py-3 rounded-md '>
+        <div className='bg-rose-500 text-white text-center py-3 rounded-md '>
       
-       <Link to={`/services/${_id}`}><button className="bg-orange-500 ">See Details</button></Link>
+       <Link to={`/services/${_id}`}><button className="bg-rose-500 ">See Details</button></Link>
         </div>
     </div>
     );

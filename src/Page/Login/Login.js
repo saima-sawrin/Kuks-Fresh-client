@@ -81,7 +81,7 @@ const Login = () => {
             <div className="text-center lg:text-left">
                     <img className='w-full' src={img} alt="" />
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20 bg-orange-500 text-white">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20 bg-rose-500 text-white">
                     <h1 className="text-5xl text-center font-bold ">Login</h1>
                     <form onSubmit={handleSubmit} className="card-body ">
                         <div className="form-control">
@@ -103,7 +103,7 @@ const Login = () => {
                         <p className='text-center'>New to Kuks Food? <Link className='font-bold' to="/signup">Sign Up</Link> </p>
                      <div className=' mb-2'>
                     
-                  {/* <button onClick={handleSignIn}  className="d-inline btn btn-block  border-0 bg-gradient-to-r from-yellow-500 to-orange-500 mb-2 " variant='outline-primary'> <FaGoogle className='text-blue-700'></FaGoogle>  Log in with Google</button> */}
+                  {/* <button onClick={handleSignIn}  className="d-inline btn btn-block  border-0 bg-gradient-to-r from-rose-500 to-orange-500 mb-2 " variant='outline-primary'> <FaGoogle className='text-blue-700'></FaGoogle>  Log in with Google</button> */}
                   <div className="my-6 space-y-4">
 		<button onClick={handleSignIn} aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
@@ -120,7 +120,7 @@ const Login = () => {
 		
 	</div>
                      {/* <br />
-                     <button onClick={handleGithub}  className="mb-2  btn border-0 btn-block bg-gradient-to-r from-violet-500 to-fuchsia-500" variant='outline-primary'><FaGithub className='text-yellow-400'></FaGithub>  Log in with Github</button> */}
+                     <button onClick={handleGithub}  className="mb-2  btn border-0 btn-block bg-gradient-to-r from-violet-500 to-fuchsia-500" variant='outline-primary'><FaGithub className='text-rose-400'></FaGithub>  Log in with Github</button> */}
                      </div>
                      <p className='text-white'>{error}</p>
                     </form>

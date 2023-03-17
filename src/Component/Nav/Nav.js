@@ -18,10 +18,10 @@ const Nav = () => {
 	  }
     return (
        
-                    <div className='text-orange-500 py-6'>
+                    <div className='text-white bg-rose-500 py-4 mb-1'>
                         {/* Navbar Started */}
-                          <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 text-orange-500 ">
-                        <div className="relative flex items-center justify-between nav text-orange-500">
+                          <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  ">
+                        <div className="relative flex items-center justify-between nav ">
                           <a
                             href="/"
                             aria-label="Company"
@@ -29,7 +29,8 @@ const Nav = () => {
                             className="inline-flex items-center"
                           >
                            
-                             <img src={logo} alt="" className='w-24' />
+                             {/* <img src={logo} alt="" className='w-24' /> */}
+                             <h2 className='text-2xl '>KUKS FRESH</h2>
                
                             
                           </a>
@@ -64,50 +65,53 @@ const Nav = () => {
                              Blog
                               </a>
                             </li>
+                            <li>
+                              <Link
+                                to='/addServices'
+                                aria-label="Product pricing"
+                                title="blog"
+                                className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              >
+                        Add Services
+                              </Link>
+                            </li>
+                            
+                            <li>
+                              <Link
+                                to='/myReview'
+                                aria-label="Product pricing"
+                                title="blog"
+                                className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              >
+                        My Review
+                              </Link>
+                            </li>
+                            
                             <>
             {
               user?.uid ?
               <div className="items-center flex-shrink-0 hidden lg:flex "> 
-                  <button><Link className='mr-3 font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400' to='/addServices'>Add Services</Link></button>
-                  <button><Link className='mr-3 font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400' to='/myReview'>My Review</Link></button>
+                  {/* <button><Link className='mr-3 font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400' to='/addServices'>Add Services</Link></button>
+                  <button><Link className='mr-3 font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400' to='/myReview'>My Review</Link></button> */}
 				  <button className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400" onClick={handleLogOut}>Log out</button>
 				  
               </div>
               :
-              <div  className="items-center flex-shrink-0 hidden lg:flex text-white">
-                 <Link to='/login'><button className="self-center font-medium px-8 py-3 rounded bg-orange-500 ">Sign in</button></Link>
-                  <Link className='text-decoration-none font-medium mx-3' to='/signup'><button className="self-center px-8 py-3  rounded bg-orange-500 dark:text-gray-900">Sign up</button></Link>
+              <div  className="items-center flex-shrink-0 hidden lg:flex text-rose-500 ">
+                 <Link to='/login'><button className="self-center font-medium px-8 py-3 rounded text-rose-500 bg-white ">Sign in</button></Link>
+                  
               </div>
           }
 		  <div div className="items-center flex-shrink-0 hidden lg:flex">
-		  {user?.photoURL?
-		                
-						<img src={user.photoURL} alt="" title= {user.displayName} className="w-10 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
-
-				   
-						  : <FaUser></FaUser>
-					  }</div>
+		  {user?.uid?
+		             <>
+                 	<img src={user.photoURL} alt="" title= {user.displayName} className="w-10 mx-auto rounded-full dark:bg-gray-500 aspect-square" /></>   
+					
+						  :
+              <Link className='text-decoration-none font-medium mx-3' to='/signup'><button className="self-center px-8 py-3  rounded bg-white text-rose-500">Sign up</button></Link>
+					  }
+            </div>
           </>
-                            {/* <li>
-                              <a
-                                href="/login"
-                                aria-label="Login"
-                                title="Login"
-                                className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"
-                              >
-                               Login
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="/"
-                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-orange-500 text-white bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none "
-                                aria-label="Sign up"
-                                title="Sign up"
-                              >
-                                Sign up
-                              </a>
-                            </li> */}
                           </ul>
                           <div className="lg:hidden ">
                             <button
@@ -132,7 +136,7 @@ const Nav = () => {
                               </svg>
                             </button>
                             {isMenuOpen && (
-                              <div className=" absolute pl-5 top-0 right-0 w-4/7">
+                              <div className=" relative pl-5 top-0 right-0 w-4/7  ">
                                 <div className="p-5 bg-white border rounded shadow-sm">
                                   <div className="flex items-center justify-between mb-4">
                                     <div>
@@ -143,11 +147,11 @@ const Nav = () => {
                                         className="inline-flex items-center"
                                       >
                                       
-                                        <img src={logo} alt="" className='w-24' />
+                                      <h2 className='text-2xl text-rose-500'>KUKS FRESH</h2>
                                        
                                       </a>
                                     </div>
-                                    <div>
+                                    <div className='text-rose-500'>
                                       <button
                                         aria-label="Close Menu"
                                         title="Close Menu"
@@ -164,7 +168,7 @@ const Nav = () => {
                                     </div>
                                   </div>
                                   <nav>
-                                    <ul className="space-y-4">
+                                    <ul className="space-y-4 text-rose-500">
                                       <li>
                                         <a
                                           href="/"
@@ -198,18 +202,18 @@ const Nav = () => {
                                       
                                       <li>
                                         <a
-                                          href="/"
+                                          href="/login"
                                           aria-label="login"
                                           title="login"
                                           className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                                         >
-                                          Login
+                                          Signin
                                         </a>
                                       </li>
                                       <li>
                                         <a
-                                          href="/"
-                                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide   transition duration-200 rounded shadow-md bg-deep-purple-accent-400 bg-orange-500 text-white hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                          href="/signup"
+                                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide   transition duration-200 rounded shadow-md bg-deep-purple-accent-400 bg-rose-500 text-white hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                           aria-label="Sign up"
                                           title="Sign up"
                                         >

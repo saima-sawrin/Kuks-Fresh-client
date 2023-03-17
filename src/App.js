@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <div className="font-serif">
+    <div className="font-sans">
    <RouterProvider router={router}> </RouterProvider>
    <Toaster></Toaster>
     </div>

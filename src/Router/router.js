@@ -4,6 +4,8 @@ import Blog from '../Component/Blog/Blog';
 import AddServices from '../Component/Services/AddServices/AddServices';
 import AllCard from '../Component/Services/AllCard';
 import Details from '../Component/Services/Details';
+import ClientReview from '../Component/Services/Reviews/ClientReview';
+import ClientRevs from '../Component/Services/Reviews/ClientRevs';
 import Reviews from '../Component/Services/Reviews/Reviews';
 import Main from '../Layout/Main';
 import Home from '../Page/Home/Home';
@@ -38,14 +40,14 @@ const router = createBrowserRouter ([
         },
         {
             path:'/addServices',
-            loader:()=> fetch(`http://localhost:5000/allServices`),
+            loader:()=> fetch(`https://kuks-fresh-server-side.vercel.app/allServices`),
             element: <AddServices></AddServices>
         },
      
           
     {
         path:'/services/:id',
-        loader:({params})=>fetch(`http://localhost:5000/allServices/${params.id}`),
+        loader:({params})=>fetch(`https://kuks-fresh-server-side.vercel.app/allServices/${params.id}`),
         element: <Details></Details>
     
    },
@@ -54,6 +56,7 @@ const router = createBrowserRouter ([
     path:'/myReview',
     element: <Reviews></Reviews>
    }
+  
  ]}
  
 ])
