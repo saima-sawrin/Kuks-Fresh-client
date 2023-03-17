@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 
 const MyReview = ({rev, handleDelete , handleUpdate}) => {
@@ -28,7 +29,7 @@ const MyReview = ({rev, handleDelete , handleUpdate}) => {
    
             :
             <>
-            <h1 className='text-center font-bold text-3xl'>Not Included any Review Yet</h1></>
+            <h1 className='text-center font-semibold text-xl'>Please <Link  to='/signup' className='text-blue-600'>Login</Link> First</h1></>
          }
          </>
     );

@@ -12,7 +12,7 @@ const Details = () => {
     const serviceDetails = useLoaderData();
  
 
-    const {title,img , price , rating , description, cReview } = serviceDetails;
+    const {title,img , price , rating , description} = serviceDetails;
 
 
     // const {client , rate,time , review}= feedback;
@@ -25,14 +25,14 @@ const Details = () => {
         const email = user?.email || 'unregistered';
         const review = form.review.value;
         const rate = form.rate.value;
-        const item = form.item.value;
+        const title = form.title.value;
 
         const reviews = {
             client: name,
             email,
             img ,
             review,
-            item,
+           title,
 			rate
 
         }
@@ -138,7 +138,7 @@ const Details = () => {
 </div>
 </div> */}
 <div>
-    <ClientReview serviceDetails={serviceDetails}></ClientReview>
+    <ClientReview></ClientReview>
 
 </div>
 <div className="flex flex-col  p-8 shadow-sm rounded-xl lg:p-12  text-gray-900">
@@ -153,11 +153,12 @@ const Details = () => {
                     <input name='name' type="text" placeholder="name" className="input input-bordered w-full " defaultValue={user?.displayName} required />
                     <input name='email' type="text" placeholder="email" defaultValue={user?.email} className="input input-bordered w-full " readOnly />
                     <input name='img' type="text" placeholder="photoURL" defaultValue={user?.photoURL} className="input input-bordered w-full " required />
-                    <input name='item' type="text" placeholder="Item" defaultValue={title} className="input input-bordered w-full " readOnly />
+                    <input name='title' type="text" placeholder="Item" defaultValue={title} className="input input-bordered w-full " readOnly />
 
                 </div>
-                <textarea name='review' className="textarea mt-2 textarea-bordered h-24 w-full" placeholder="your review"></textarea>
                 <textarea name='rate' className="textarea mt-2 textarea-bordered h-10 w-full" placeholder="Rating"></textarea>
+                <textarea name='review' className="textarea mt-2 textarea-bordered h-24 w-full" placeholder="your review"></textarea>
+                
                 {/* <input className='btn bg-rose-500 border-0' type="submit" value="Leave Feedback" /> */}
 				<>
 		         {

@@ -1,17 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+
 import { AuthContext } from '../../../context/AuthProvider';
 import ClientRevs from './ClientRevs';
 
-const ClientReview = ({serviceDetails}) => {
+const ClientReview = () => {
     const[reviews , setReviews] = useState([]);
    
     const { user } = useContext(AuthContext);
     useEffect(()=>{
-       fetch('https://kuks-fresh-server-side.vercel.app/allReview')
+       fetch(`https://kuks-fresh-server-side.vercel.app/allReview?title=${reviews?.title}`)
        .then(res => res.json())
-       .then(data => setReviews(data))
-     },[user?.email])
+       .then(data =>setReviews(data))
+     },[reviews?.title])
 
     return (
   

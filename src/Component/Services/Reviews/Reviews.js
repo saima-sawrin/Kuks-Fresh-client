@@ -36,7 +36,7 @@ const Reviews = () => {
 
     return (
         <div>
-        <h1 className='text-xl'>my reviews:{reviews.length}</h1>
+        {/* <h1 className='text-xl'>my reviews:{reviews.length}</h1> */}
         <div className="overflow-x-auto ">
             <table className="table-auto w-full">
                 <thead>
